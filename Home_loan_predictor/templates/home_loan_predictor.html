@@ -1,0 +1,101 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home_loan.css' %}">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Form</title>
+        <!--Google Font-->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+        <!--Stylesheet-->
+        <!-- <link rel="stylesheet" href="style.css"> -->
+   
+</head>
+<body>
+    <center>
+ <div class="content">
+    <h2>HOME LOAN PREDICTOR</h2><form method="post" action="result"> 
+        {% csrf_token %}
+    <table  style="height:500px; width:auto; border:1px solid rgb(194, 143, 80);">
+        
+        
+        <tr>
+            <td>Gender</td>
+            <td><input type="radio" name="Gender" value="1">MALE <input type="radio" name="Gender" value="0">FEMALE </td>
+        </tr>
+        <tr>
+            <td>Married</td>
+            <td><input type="radio" name="Married" value="1">YES <input type="radio" name="Married" value="0">NO </td>
+        </tr>
+        <tr>
+            <td>Education</td>
+            <td><input type="radio" name="Education" value="1">GRADUATE <input type="radio" name="Education" value="0">NOT GRADUATE </td>
+        </tr>
+        <tr>
+            <td>Self_Employed</td>
+            <td><input type="radio" name="Self_Employed" value="1">YES <input type="radio" name="Self_Employed" value="0">NO </td>
+        </tr>
+        <tr>
+            <td>Dependents</td>
+            <td><input type="number" name="Dependents"></td>
+        </tr>
+        <tr>
+            <td>Applicant Income</td>
+            <td><input type="number" name="ApplicantIncome"></td>
+        </tr>
+        <tr>
+            <td>Co-Applicant Income</td>
+            <td><input type="number" name="CoapplicantIncome"></td>
+        </tr>
+        <tr>
+            <td>LoanAmount</td>
+            <td><input type="number" name="LoanAmount" id="loanamount" value=""></td>
+        </tr>
+        <tr>
+            <td>Loan_Amount_Term</td>
+            <td><input type="" name="Loan_Amount_Term" ></td>
+        </tr>
+        <tr>
+            <td>Credit_History</td>
+            <td><input type="radio" name="Credit_History" value="1">YES <input type="radio" name="Credit_History" value="0">NO </td>
+        </tr>
+        <tr>
+            <td>Property_Area</td>
+            <td><input type="radio" name="Property_Area" value="2">URBAN <input type="radio" name="Property_Area" value="0">RURAL  <input type="radio" name="Property_Area" value="1">SEMI-URBAN</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" class ="button" value="PREDICT" onclick="saurabh()"></td>
+        </tr>
+        
+
+    </table>
+</form>
+</div>
+
+
+
+
+</center>
+<!-- # C:\Users\Harsh\Documents\ml_devlop\static\a.jpeg -->
+<!-- <img src="{% static './a.jpeg'%}" alt="my image" width="700px" height="600px;"/>   -->
+
+
+<script>
+   
+  
+   function saurabh(){
+    var a= document.getElementById("loanamount").value;
+    var b=a/10000;
+    var c=Math.ceil(b);
+    document.getElementById("loanamount").value=c;
+   }
+</script>
+    
+</body>
+</html>
